@@ -6,7 +6,6 @@ m = 0
 money = []
 played_amount = []
 count = []
-
 stats = {
     "count": count,
     "played_amount": played_amount,
