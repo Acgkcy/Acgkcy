@@ -1,0 +1,55 @@
+a = True
+i = -1
+m2 = -1
+pa = 0
+m = 0
+money = []
+played_amount = []
+count = []
+
+stats = {
+    "count": count,
+    "played_amount": played_amount,
+    "money": money
+}
+#                                                                                      Print Section 1
+print("The Application assumes that the players can re-join with 10,000 dollars ")
+print("in exchange for taking in the debt. ")
+print("------------------------------------")
+print("Type y for true and n for false")
+#                                                                                      Loop Section 2
+while a:
+    print("                                             ", i + 2)
+    b = input("Is there going to be a player with the number ⌃  : ")
+    if b.lower() == "n":
+        a = False
+    i += 1
+    if b.lower() == "y":
+        count.append(i + 1)
+print("--------------------------------")
+#                                                                                      Loop Section 3
+for _ in range(i):
+    m2 += 1
+    print("                         ", m2 + 1)
+    b = input("How much money has player ⌃ made?  :  ")
+    money.append(int(b))
+print("--------------------------------")
+#                                                                                      Loop Section 4
+m2 = -1
+for _ in range(i):
+    m2 += 1
+    print("                         ", m2 + 1)
+    b = int(input("How many times had player ⌃ played?  :  "))
+    played_amount.append(b)
+print("--------------------------------")
+#                                                                                      Stat Section 5
+print("The ending result:  ")
+print(stats)
+print("--------------------------------")
+#                                                                                      Ending Result Section 6
+for m2 in range(len(money)):
+    print("The Player", m2 + 1, "has made $", money[m2], "and has played", played_amount[m2], "times.")
+    debt = ((played_amount[m2] - 1) * 10000) + 10000
+    final_amount = money[m2] - debt
+    print("Their debt is $" + str(debt) + ".")
+    print("Their final amount is $" + str(final_amount) + ".")
